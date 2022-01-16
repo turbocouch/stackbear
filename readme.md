@@ -22,11 +22,11 @@ To import the library and create a stack, simply use the below code. The code sh
 
 ```javascript
 const Stack = require("stackbear");
-const techstack = new Stack("version-one");
+const techstack = new Stack();
 
 /** OR **/
 import Stack from "stackbear";
-const techstack = new Stack("version-one");
+const techstack = new Stack();
 ```
 
 ## Contributing
