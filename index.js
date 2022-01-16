@@ -6,6 +6,31 @@ class Stack {
 
     }
 
+    static parse() {
+
+
+
+    }
+
+    static stringify(replacer, space) {
+
+        let stackObject = {
+            stackbear: this.stackbear,
+            info: this.info,
+            services: this.services,
+            assets: this.assets
+        } 
+
+        return JSON.stringify(stackObject, replacer, space)
+
+    }
+
+    static toString() {
+
+        return this.stringify()
+
+    }
+
     get name() {
 
         if (this.info == undefined) return null;
