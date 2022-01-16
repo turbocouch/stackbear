@@ -163,7 +163,7 @@ class Stack {
 
     }
 
-    get services() {
+    getServices() {
 
         if (this.services == undefined) return null;
         return this.services;
@@ -184,6 +184,30 @@ class Stack {
             this.services = [];
 
         this.services.push(service);
+
+    }
+
+    getAssets() {
+
+        if (this.assets == undefined) return null;
+        return this.assets;
+
+    }
+
+    setAssets(assets) {
+
+        if (!Array.isArray(assets)) throw new Error("Assets must be an array!");
+
+        this.assets = assets;
+
+    }
+
+    addService(asset) {
+
+        if (this.assets == undefined) 
+            this.assets = [];
+
+        this.assets.push(asset);
 
     }
 

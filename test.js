@@ -12,7 +12,7 @@ test(`stackbear data is loaded from string properly`, () => {
             license: 'MIT',
         },
         services: [
-            
+
         ]
     };
 
@@ -23,5 +23,9 @@ test(`stackbear data is loaded from string properly`, () => {
     expect(stack.version).toEqual('1.0.0')
     expect(stack.author).toEqual('Jane Doe')
     expect(stack.license).toEqual('MIT')
+
+    expect(stack.getServices()).toEqual([])
+
+    expect(stack.getAssets()).toEqual([])
 
 })
