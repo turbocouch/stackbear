@@ -1,4 +1,4 @@
-class Stack {
+export default class Stack {
 
     stackbear = 'version-one';
     info:StackInfo = new StackInfo();
@@ -104,5 +104,3 @@ class StackAsset {
 
 
 }
-
-module.exports = Stack;
