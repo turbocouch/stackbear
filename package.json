@@ -3,8 +3,9 @@
   "version": "1.1.0",
   "description": "An npm package for managing stackbear files.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "start": "npx tsc index.ts",
+    "start": "npx tsc",
     "test": "npx jest",
     "patch-release": "npm version patch; npm publish",
     "minor-release": "npm version minor; npm publish",
