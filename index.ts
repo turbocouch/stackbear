@@ -106,13 +106,21 @@ class HostingInfo {
 
     virtual = true;
     location:LocationInfo = null;
+    memory:(number | string | MinMaxProperty);
+
+}
+
+class MinMaxProperty {
+
+    min:number;
+    max:number;
 
 }
 
 class LocationInfo {
 
-    longitude:number = 0;
-    latitude:number = 0;
+    longitude:number;
+    latitude:number;
 
 }
 
