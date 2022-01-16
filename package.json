@@ -1,6 +1,6 @@
 {
   "name": "stackbear",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "An npm package for managing stackbear files.",
   "main": "index.js",
   "scripts": {
