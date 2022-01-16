@@ -95,7 +95,24 @@ class StackInfo {
 
 class StackService {
 
+    name = "A blank service.";
+    type = "blank";
+    languages:Array<string> = [];
+    info:HostingInfo = null;
 
+}
+
+class HostingInfo {
+
+    virtual = true;
+    location:LocationInfo = null;
+
+}
+
+class LocationInfo {
+
+    longitude:number = 0;
+    latitude:number = 0;
 
 }
 
