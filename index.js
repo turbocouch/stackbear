@@ -82,7 +82,7 @@ class Stack {
 
         }
 
-        throw new Error(`Stackbear version ${version} is not defined.`);
+        throw new Error(`Stackbear version '${version}' is not defined.`);
 
     }
 
