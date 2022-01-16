@@ -25,6 +25,7 @@ class Stack {
         }
 
         stackobject.setServices(json.services);
+        stackobject.setAssets(json.services);
 
         return stackobject;
 

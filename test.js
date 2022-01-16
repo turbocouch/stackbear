@@ -13,6 +13,9 @@ test(`stackbear data is loaded from string properly`, () => {
         },
         services: [
 
+        ],
+        assets: [
+            
         ]
     };
 
