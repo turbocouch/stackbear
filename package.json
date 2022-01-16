@@ -4,7 +4,7 @@
   "description": "An npm package for managing stackbear files.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx jest",
     "patch-release": "npm version patch; npm publish",
     "minor-release": "npm version minor; npm publish",
     "major-release": "npm version major; npm publish"
@@ -14,8 +14,5 @@
     "index.js"
   ],
   "author": "William McGonagle",
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^27.4.7"
-  }
+  "license": "ISC"
 }
