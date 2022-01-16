@@ -6,25 +6,33 @@ class Stack {
 
     }
 
-    static parse(stackString) {
+    static fromJSON(json) {
 
-        var parsedStack = JSON.parse(stackString);
-        var stackobject = new Stack(parsedStack);
+        var stackobject = new Stack(json);
 
         // Set Info
-        if (parsedStack.info != undefined) {
+        if (json.info != undefined) {
 
-            stackobject.setName(parsedStack.info.name)
-            stackobject.setVersion(parsedStack.info.version)
-            stackobject.setDescription(parsedStack.info.description)
-            stackobject.setLicense(parsedStack.info.license)
-            stackobject.setAuthor(parsedStack.info.author)
+            stackobject.setName(json.info.name)
+            stackobject.setVersion(json.info.version)
+            stackobject.setDescription(json.info.description)
+            stackobject.setLicense(json.info.license)
+            stackobject.setAuthor(json.info.author)
 
         } else {
 
             throw new Error("Stack doesn't have info!");
 
         }
+
+        return stackObject;
+
+    }
+
+    static fromString(stackString) {
+
+        var parsedStack = JSON.parse(stackString);
+        return this.fromJSON(parsedStack);
 
     }
 
