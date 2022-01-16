@@ -8,9 +8,9 @@
   "scripts": {
     "start": "npx tsc",
     "test": "npx jest",
-    "patch-release": "npm version patch; npm publish",
-    "minor-release": "npm version minor; npm publish",
-    "major-release": "npm version major; npm publish"
+    "patch-release": "npm run start; git add -A; git commit -m '😈 New Version on NPM'; npm version patch; npm publish",
+    "minor-release": "npm run start; git add -A; git commit -m '😻 New Version on NPM'; npm version minor; npm publish",
+    "major-release": "npm run start; git add -A; git commit -m '🤑 New Version on NPM'; npm version major; npm publish"
   },
   "keywords": [],
   "files": [

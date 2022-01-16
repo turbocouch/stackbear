@@ -85,28 +85,33 @@ export default class Stack {
 
 class StackInfo {
 
-    name = "New Stack";
-    description = "This is a new stack.";
-    author = "Jane Doe";
-    version = "1.0.0";
-    license = "MIT";
+    name:string;
+    description:string;
+    author:string;
+    version:string;
+    license:string;
 
 }
 
 class StackService {
 
-    name = "A blank service.";
-    type = "blank";
-    languages:Array<string> = [];
-    info:HostingInfo = null;
+    name:string;
+    type:string;
+    languages:Array<string>;
+    info:HostingInfo;
 
 }
 
 class HostingInfo {
 
-    virtual = true;
-    location:LocationInfo = null;
-    memory:(number | string | MinMaxProperty);
+    virtual:boolean;
+    location:(LocationInfo | null);
+    memory:(number | string | MinMaxProperty | null);
+    bandwidth:(number | string | MinMaxProperty | null);
+    ips:(number | string | MinMaxProperty | null); // instructions per second
+    flops:(number | string | MinMaxProperty | null); // float ops per second
+    latency:(number | string | MinMaxProperty | null);
+    electricity:(number | string | MinMaxProperty | null);
 
 }
 
