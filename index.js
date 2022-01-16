@@ -1,13 +1,10 @@
 class Stack {
 
-    stackbear = null;
-    info = {
-        name: null,
-        author: null,
-        version: null,
-        license: null
-    };
-    services = [];
+    constructor(version) {
+
+        this.stackbear = version;
+
+    }
 
     get name() {
 
