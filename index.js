@@ -77,6 +77,40 @@ class Stack {
 
     }
 
+    get author() {
+
+        if (this.info == undefined) return null;
+        if (this.info.author == undefined) return null;
+        return this.info.author;
+
+    }
+
+    setAuthor(author) {
+
+        if (this.info == undefined)
+            this.info = {};
+
+        this.info.author = author;
+
+    }
+
+    get license() {
+
+        if (this.info == undefined) return null;
+        if (this.info.license == undefined) return null;
+        return this.info.license;
+
+    }
+
+    setLicense(license) {
+
+        if (this.info == undefined)
+            this.info = {};
+
+        this.info.license = license;
+
+    }
+
 }
 
 module.exports = Stack;
