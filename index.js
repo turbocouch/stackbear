@@ -10,20 +10,21 @@ class Stack {
 
         let stackobject = new Stack(json.stackbear);
 
-        // Set Info
         if (json.info != undefined) {
 
-            stackobject.setName(json.info.name)
-            stackobject.setVersion(json.info.version)
-            stackobject.setDescription(json.info.description)
-            stackobject.setLicense(json.info.license)
-            stackobject.setAuthor(json.info.author)
+            stackobject.setName(json.info.name);
+            stackobject.setVersion(json.info.version);
+            stackobject.setDescription(json.info.description);
+            stackobject.setLicense(json.info.license);
+            stackobject.setAuthor(json.info.author);
 
         } else {
 
             throw new Error("Stack doesn't have info!");
 
         }
+
+        stackobject.setServices(json.services);
 
         return stackobject;
 
