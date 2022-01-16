@@ -12,20 +12,22 @@ class Stack {
 
     }
 
-    static stringify(replacer, space) {
+    static stringify(stack, replacer, space) {
+
+        if (!(stack instanceof Stack)) throw new Error("Inputted object is not a stack!");
 
         let stackObject = {
-            stackbear: this.stackbear,
-            info: this.info,
-            services: this.services,
-            assets: this.assets
+            stackbear: stack.stackbear,
+            info: stack.info,
+            services: stack.services,
+            assets: stack.assets
         } 
 
         return JSON.stringify(stackObject, replacer, space)
 
     }
 
-    static toString() {
+    toString() {
 
         return this.stringify()
 
