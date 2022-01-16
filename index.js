@@ -2,13 +2,29 @@ class Stack {
 
     constructor(version) {
 
-        this.stackbear = version;
+        this.setStackbearVersion(version);
 
     }
 
-    static parse() {
+    static parse(stackString) {
 
+        var parsedStack = JSON.parse(stackString);
+        var stackobject = new Stack(parsedStack);
 
+        // Set Info
+        if (parsedStack.info != undefined) {
+
+            stackobject.setName(parsedStack.info.name)
+            stackobject.setVersion(parsedStack.info.version)
+            stackobject.setDescription(parsedStack.info.description)
+            stackobject.setLicense(parsedStack.info.license)
+            stackobject.setAuthor(parsedStack.info.author)
+
+        } else {
+
+            throw new Error("Stack doesn't have info!");
+
+        }
 
     }
 
