@@ -154,6 +154,13 @@ class Stack {
 
     }
 
+    get services() {
+
+        if (this.services == undefined) return null;
+        return this.services;
+
+    }
+
 }
 
 module.exports = Stack;
