@@ -6,11 +6,40 @@ class Stack {
 
     }
 
-    get description() {
+    get name() {
 
         if (this.info == undefined) return null;
-        if (this.info.description == undefined) return null;
-        return this.info.description;
+        if (this.info.name == undefined) return null;
+        return this.info.name;
+
+    }
+
+    setName(name) {
+
+        if (this.info == undefined)
+            this.info = {};
+
+        this.info.name = name;
+
+    }
+
+    get stackbearVersion() {
+    
+        if (this.stackbear == undefined) return null;
+        return this.stackbear;
+    
+    }
+
+    setStackbearVersion(version) {
+
+        if (version == "version-one") {
+
+            this.stackbear = version;
+            return;
+
+        }
+
+        throw new Error(`Stackbear version ${version} is not defined.`);
 
     }
 
@@ -22,19 +51,30 @@ class Stack {
 
     }
 
-    get name() {
+    setVersion(version) {
 
-        if (this.info == undefined) return null;
-        if (this.info.name == undefined) return null;
-        return this.info.name;
+        if (this.info == undefined)
+            this.info = {};
+
+        this.info.version = version;
 
     }
 
-    get stackbearVersion() {
-    
-        if (this.stackbear == undefined) return null;
-        return this.stackbear;
-    
+    get description() {
+
+        if (this.info == undefined) return null;
+        if (this.info.description == undefined) return null;
+        return this.info.description;
+
+    }
+
+    setDescription(description) {
+
+        if (this.info == undefined)
+            this.info = {};
+
+        this.info.description = description;
+
     }
 
 }
