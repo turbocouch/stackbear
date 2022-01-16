@@ -10,6 +10,6 @@
     "major-release": "npm version major; npm publish"
   },
   "keywords": [],
-  "author": "",
+  "author": "William McGonagle",
   "license": "ISC"
 }
