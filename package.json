@@ -1,7 +1,7 @@
 {
   "name": "stackbear",
   "version": "1.0.11",
-  "description": "",
+  "description": "An npm package for managing stackbear files.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,5 +11,8 @@
   },
   "keywords": [],
   "author": "William McGonagle",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
 }
