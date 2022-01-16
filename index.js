@@ -161,6 +161,23 @@ class Stack {
 
     }
 
+    setServices(services) {
+
+        if (!Array.isArray(services)) throw new Error("Services must be an array!");
+
+        this.services = services;
+
+    }
+
+    addService(service) {
+
+        if (this.services == undefined) 
+            this.services = [];
+
+        this.services.push(service);
+
+    }
+
 }
 
 module.exports = Stack;
