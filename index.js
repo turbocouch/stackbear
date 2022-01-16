@@ -8,7 +8,7 @@ class Stack {
 
     static fromJSON(json) {
 
-        var stackobject = new Stack(json);
+        let stackobject = new Stack(json.stackbear);
 
         // Set Info
         if (json.info != undefined) {
@@ -25,7 +25,7 @@ class Stack {
 
         }
 
-        return stackObject;
+        return stackobject;
 
     }
 

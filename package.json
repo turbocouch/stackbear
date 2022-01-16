@@ -10,6 +10,9 @@
     "major-release": "npm version major; npm publish"
   },
   "keywords": [],
+  "files": [
+    "index.js"
+  ],
   "author": "William McGonagle",
   "license": "ISC",
   "devDependencies": {
