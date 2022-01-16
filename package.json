@@ -4,6 +4,7 @@
   "description": "An npm package for managing stackbear files.",
   "main": "index.js",
   "scripts": {
+    "start": "npx tsc index.ts",
     "test": "npx jest",
     "patch-release": "npm version patch; npm publish",
     "minor-release": "npm version minor; npm publish",

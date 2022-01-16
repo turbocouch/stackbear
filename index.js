@@ -1,217 +1,73 @@
-class Stack {
-
-    constructor(version) {
-
+var Stack = /** @class */ (function () {
+    function Stack(version) {
+        this.stackbear = 'version-one';
+        this.info = new StackInfo();
+        this.services = [];
+        this.assets = [];
         this.setStackbearVersion(version);
-
     }
-
-    static fromJSON(json) {
-
-        let stackobject = new Stack(json.stackbear);
-
+    Stack.fromJSON = function (json) {
+        var stackobject = new Stack(json.stackbear);
         if (json.info != undefined) {
-
-            stackobject.setName(json.info.name);
-            stackobject.setVersion(json.info.version);
-            stackobject.setDescription(json.info.description);
-            stackobject.setLicense(json.info.license);
-            stackobject.setAuthor(json.info.author);
-
-        } else {
-
-            throw new Error("Stack doesn't have info!");
-
+            stackobject.info.name = json.info.name;
+            stackobject.info.version = json.info.version;
+            stackobject.info.description = json.info.description;
+            stackobject.info.license = json.info.license;
+            stackobject.info.author = json.info.author;
         }
-
-        stackobject.setServices(json.services);
-        stackobject.setAssets(json.services);
-
+        else {
+            throw new Error("Stack doesn't have info!");
+        }
+        stackobject.services = json.services;
+        stackobject.assets = json.services;
         return stackobject;
-
-    }
-
-    static fromString(stackString) {
-
+    };
+    Stack.fromString = function (stackString) {
         var parsedStack = JSON.parse(stackString);
         return this.fromJSON(parsedStack);
-
-    }
-
-    static stringify(stack, replacer, space) {
-
-        if (!(stack instanceof Stack)) throw new Error("Inputted object is not a stack!");
-
-        let stackObject = {
+    };
+    Stack.stringify = function (stack, replacer, space) {
+        var stackObject = {
             stackbear: stack.stackbear,
             info: stack.info,
             services: stack.services,
             assets: stack.assets
-        } 
-
-        return JSON.stringify(stackObject, replacer, space)
-
-    }
-
-    toString() {
-
-        return this.stringify()
-
-    }
-
-    get name() {
-
-        if (this.info == undefined) return null;
-        if (this.info.name == undefined) return null;
-        return this.info.name;
-
-    }
-
-    setName(name) {
-
-        if (this.info == undefined)
-            this.info = {};
-
-        this.info.name = name;
-
-    }
-
-    get stackbearVersion() {
-    
-        if (this.stackbear == undefined) return null;
+        };
+        return JSON.stringify(stackObject, replacer, space);
+    };
+    Stack.prototype.toString = function () {
+        return Stack.stringify(this);
+    };
+    Stack.prototype.getStackbearVersion = function () {
         return this.stackbear;
-    
-    }
-
-    setStackbearVersion(version) {
-
+    };
+    Stack.prototype.setStackbearVersion = function (version) {
         if (version == "version-one") {
-
             this.stackbear = version;
             return;
-
         }
-
-        throw new Error(`Stackbear version '${version}' is not defined.`);
-
+        throw new Error("Stackbear version '" + version + "' is not defined.");
+    };
+    return Stack;
+}());
+var StackInfo = /** @class */ (function () {
+    function StackInfo() {
+        this.name = "New Stack";
+        this.description = "This is a new stack.";
+        this.author = "Jane Doe";
+        this.version = "1.0.0";
+        this.license = "MIT";
     }
-
-    get version() {
-
-        if (this.info == undefined) return null;
-        if (this.info.version == undefined) return null;
-        return this.info.version;
-
+    return StackInfo;
+}());
+var StackService = /** @class */ (function () {
+    function StackService() {
     }
-
-    setVersion(version) {
-
-        if (this.info == undefined)
-            this.info = {};
-
-        this.info.version = version;
-
+    return StackService;
+}());
+var StackAsset = /** @class */ (function () {
+    function StackAsset() {
     }
-
-    get description() {
-
-        if (this.info == undefined) return null;
-        if (this.info.description == undefined) return null;
-        return this.info.description;
-
-    }
-
-    setDescription(description) {
-
-        if (this.info == undefined)
-            this.info = {};
-
-        this.info.description = description;
-
-    }
-
-    get author() {
-
-        if (this.info == undefined) return null;
-        if (this.info.author == undefined) return null;
-        return this.info.author;
-
-    }
-
-    setAuthor(author) {
-
-        if (this.info == undefined)
-            this.info = {};
-
-        this.info.author = author;
-
-    }
-
-    get license() {
-
-        if (this.info == undefined) return null;
-        if (this.info.license == undefined) return null;
-        return this.info.license;
-
-    }
-
-    setLicense(license) {
-
-        if (this.info == undefined)
-            this.info = {};
-
-        this.info.license = license;
-
-    }
-
-    getServices() {
-
-        if (this.services == undefined) return null;
-        return this.services;
-
-    }
-
-    setServices(services) {
-
-        if (!Array.isArray(services)) throw new Error("Services must be an array!");
-
-        this.services = services;
-
-    }
-
-    addService(service) {
-
-        if (this.services == undefined) 
-            this.services = [];
-
-        this.services.push(service);
-
-    }
-
-    getAssets() {
-
-        if (this.assets == undefined) return null;
-        return this.assets;
-
-    }
-
-    setAssets(assets) {
-
-        if (!Array.isArray(assets)) throw new Error("Assets must be an array!");
-
-        this.assets = assets;
-
-    }
-
-    addService(asset) {
-
-        if (this.assets == undefined) 
-            this.assets = [];
-
-        this.assets.push(asset);
-
-    }
-
-}
-
+    return StackAsset;
+}());
 module.exports = Stack;
