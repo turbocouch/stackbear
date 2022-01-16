@@ -7,7 +7,8 @@ export default class Stack {
 
     constructor(version) {
 
-        this.setStackbearVersion(version);
+        if (version != undefined)
+            this.setStackbearVersion(version);
 
     }
 
